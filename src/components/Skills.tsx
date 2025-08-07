@@ -22,47 +22,78 @@ const Skills = () => {
     return () => observer.disconnect();
   }, []);
 
-  const SkillBubble = ({ skill, index }: { skill: any; index: number }) => (
+  const SkillBubble = ({ skill, index, categoryIndex }: { skill: any; index: number; categoryIndex: number }) => (
     <div
-      className={`glass-card p-6 rounded-2xl hover:glow-soft transition-all duration-500 ripple-effect cursor-pointer group ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      className={`glass-card p-4 md:p-6 rounded-full hover:glow-soft transition-all duration-500 ripple-effect cursor-pointer group bubble-float ${
+        isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
       }`}
       style={{ 
-        animation: isVisible ? 'bubble-float 8s ease-in-out infinite' : 'none',
-        animationDelay: `${index * 0.5}s`
+        animationDelay: `${(categoryIndex * 0.3) + (index * 0.1)}s`,
+        animationDuration: `${6 + (index % 3)}s`
       }}
     >
-      <div className="text-center">
-        <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">
+      <div className="flex flex-col items-center space-y-2 min-w-[80px] md:min-w-[100px]">
+        <div className="text-2xl md:text-3xl group-hover:scale-110 transition-transform float-gentle">
           {skill.icon}
         </div>
-        <h3 className="font-semibold text-foreground mb-2">
+        <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors text-center text-sm md:text-base">
           {skill.name}
-        </h3>
-        
-        {/* Skill Level Bar */}
-        <div className="w-full bg-muted rounded-full h-2 mb-2">
-          <div 
-            className="bg-primary h-2 rounded-full transition-all duration-1000 ease-out"
-            style={{ 
-              width: isVisible ? `${skill.level}%` : '0%',
-              transitionDelay: `${index * 0.1 + 0.5}s`
-            }}
-          ></div>
+        </h4>
+        <div className="text-xs text-muted-foreground">
+          {skill.level}%
         </div>
-        <span className="text-sm text-muted-foreground">{skill.level}%</span>
+        
+        {/* Circular Progress */}
+        <div className="relative w-8 h-8 md:w-10 md:h-10">
+          <svg className="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+            <path
+              d="M18 2.0845
+                a 15.9155 15.9155 0 0 1 0 31.831
+                a 15.9155 15.9155 0 0 1 0 -31.831"
+              fill="none"
+              stroke="hsl(var(--muted))"
+              strokeWidth="2"
+            />
+            <path
+              d="M18 2.0845
+                a 15.9155 15.9155 0 0 1 0 31.831
+                a 15.9155 15.9155 0 0 1 0 -31.831"
+              fill="none"
+              stroke="hsl(var(--primary))"
+              strokeWidth="2"
+              strokeDasharray={`${skill.level}, 100`}
+              className="transition-all duration-1000 ease-out"
+              style={{
+                strokeDasharray: isVisible ? `${skill.level}, 100` : '0, 100',
+                transitionDelay: `${(categoryIndex * 0.3) + (index * 0.1) + 0.5}s`
+              }}
+            />
+          </svg>
+        </div>
       </div>
     </div>
   );
 
-  const SkillCategory = ({ title, skills, delay }: { title: string; skills: any[]; delay: number }) => (
-    <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ animationDelay: `${delay}s` }}>
-      <h3 className="font-serif text-2xl font-bold text-foreground mb-8 text-center">
-        {title}
+  const SkillCategory = ({ title, skills, categoryIndex }: { title: string; skills: any[]; categoryIndex: number }) => (
+    <div 
+      className={`transition-all duration-1000 animate-fade-in-up ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+      }`}
+      style={{ animationDelay: `${categoryIndex * 0.3}s` }}
+    >
+      <h3 className="font-serif text-2xl font-bold text-foreground mb-8 text-center capitalize">
+        {title === 'tools' ? 'Tools & Platforms' : `${title} Development`}
       </h3>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-        {skills.map((skill, index) => (
-          <SkillBubble key={skill.name} skill={skill} index={index} />
+      
+      {/* Floating Bubble Layout */}
+      <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+        {skills.map((skill, skillIndex) => (
+          <SkillBubble 
+            key={skill.name} 
+            skill={skill} 
+            index={skillIndex}
+            categoryIndex={categoryIndex}
+          />
         ))}
       </div>
     </div>
@@ -83,25 +114,16 @@ const Skills = () => {
           </p>
         </div>
 
-        {/* Skills Grid */}
+        {/* Skills Categories */}
         <div className="space-y-16">
-          <SkillCategory 
-            title="Frontend Development" 
-            skills={skillsData.frontend} 
-            delay={0.2}
-          />
-          
-          <SkillCategory 
-            title="Backend & Database" 
-            skills={skillsData.backend} 
-            delay={0.4}
-          />
-          
-          <SkillCategory 
-            title="Tools & Platforms" 
-            skills={skillsData.tools} 
-            delay={0.6}
-          />
+          {Object.entries(skillsData).map(([category, skills], categoryIndex) => (
+            <SkillCategory 
+              key={category}
+              title={category}
+              skills={skills} 
+              categoryIndex={categoryIndex}
+            />
+          ))}
         </div>
 
         {/* Floating Decorative Elements */}
