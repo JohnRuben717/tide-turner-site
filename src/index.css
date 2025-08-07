@@ -195,6 +195,46 @@ All colors MUST be HSL for perfect consistency
     @apply opacity-100;
   }
 
+  /* Button Animations */
+  .btn-hover {
+    @apply transition-all duration-200 ease-in-out;
+  }
+
+  .btn-hover:hover {
+    @apply scale-105;
+    box-shadow: 0 0 25px hsl(var(--primary) / 0.4);
+  }
+
+  .btn-cta {
+    @apply relative overflow-hidden;
+  }
+
+  .btn-cta:active {
+    animation: pulse-click 0.3s ease-out;
+  }
+
+  .btn-secondary:active {
+    animation: ripple-click 0.4s ease-out;
+  }
+
+  .project-card {
+    @apply transition-all duration-200 ease-in-out cursor-pointer;
+  }
+
+  .project-card:hover {
+    @apply scale-[1.02];
+    box-shadow: 0 0 30px hsl(var(--accent) / 0.3);
+  }
+
+  .project-card:active {
+    animation: card-press 0.2s ease-out;
+  }
+
+  /* Glowing Cursor Effect */
+  .glow-cursor {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="none" stroke="%2390E0EF" stroke-width="2" opacity="0.8"/><circle cx="10" cy="10" r="3" fill="%2390E0EF" opacity="0.6"/></svg>'), pointer;
+  }
+
   /* Floating Elements */
   .float-gentle {
     animation: float-gentle 3s ease-in-out infinite;
@@ -202,6 +242,17 @@ All colors MUST be HSL for perfect consistency
 
   .glow-soft {
     box-shadow: 0 0 20px hsl(var(--accent) / 0.4);
+  }
+
+  /* Scroll Snap */
+  .scroll-snap-container {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+  }
+
+  .scroll-snap-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
   }
 }
 
@@ -228,4 +279,27 @@ All colors MUST be HSL for perfect consistency
 @keyframes float-gentle {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-8px); }
+}
+
+@keyframes pulse-click {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.95); box-shadow: 0 0 40px hsl(var(--primary) / 0.6); }
+  100% { transform: scale(1); }
+}
+
+@keyframes ripple-click {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.98); }
+  100% { transform: scale(1); }
+}
+
+@keyframes card-press {
+  0% { transform: scale(1.02); }
+  50% { transform: scale(1); }
+  100% { transform: scale(1.02); }
+}
+
+@keyframes scroll-cue {
+  0%, 100% { opacity: 0.5; transform: translateY(0px); }
+  50% { opacity: 1; transform: translateY(5px); }
 }

@@ -29,7 +29,7 @@ const About = () => {
   ];
 
   return (
-    <section ref={sectionRef} id="about" className="py-20 lg:py-32 bg-background">
+    <section ref={sectionRef} id="about" className="py-20 lg:py-32 bg-background scroll-snap-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Content */}
@@ -90,7 +90,7 @@ const About = () => {
                     
                     <div className="flex items-start space-x-4">
                       {/* Timeline Dot */}
-                      <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold seaweed-sway">
+                      <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold">
                         {item.year.slice(-2)}
                       </div>
                       
@@ -108,16 +108,6 @@ const About = () => {
                 ))}
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Decorative Elements */}
-        <div className="mt-20 relative">
-          <div className="absolute inset-0 pointer-events-none overflow-hidden">
-            {/* Animated seaweed-like decorations */}
-            <div className="absolute left-1/4 bottom-0 w-1 h-20 bg-accent/20 seaweed-sway"></div>
-            <div className="absolute right-1/3 bottom-0 w-1 h-16 bg-primary/20 seaweed-sway" style={{ animationDelay: '1s' }}></div>
-            <div className="absolute left-2/3 bottom-0 w-1 h-24 bg-secondary/20 seaweed-sway" style={{ animationDelay: '2s' }}></div>
           </div>
         </div>
       </div>

@@ -45,7 +45,7 @@ const Projects = () => {
       <div
         className={`glass-card rounded-2xl hover:glow-soft transition-all duration-500 ripple-effect group overflow-hidden ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        } ${isExpanded ? 'md:col-span-2 lg:col-span-3' : ''}`}
+        } ${isExpanded ? 'md:col-span-2 lg:col-span-3' : ''} project-card`}
         style={{ animationDelay: `${index * 0.2}s` }}
       >
         {/* Card Header */}
@@ -68,7 +68,7 @@ const Projects = () => {
             size="sm" 
             variant="outline" 
             onClick={() => toggleProject(project.id)}
-            className="w-full group-hover:border-primary/50 transition-colors"
+            className="w-full group-hover:border-primary/50 transition-colors btn-hover btn-secondary glow-cursor"
           >
             {isExpanded ? (
               <>
@@ -101,7 +101,7 @@ const Projects = () => {
                 <h4 className="font-semibold text-foreground mb-3">Technologies Used</h4>
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech: string) => (
-                    <Badge key={tech} variant="secondary" className="hover:bg-primary/20 transition-colors">
+                    <Badge key={tech} variant="secondary" className="hover:bg-primary/20 transition-colors btn-hover glow-cursor">
                       {tech}
                     </Badge>
                   ))}
@@ -111,7 +111,7 @@ const Projects = () => {
               {/* Action Links */}
               <div className="flex gap-4 pt-4">
                 {project.live && (
-                  <Button asChild className="flex-1">
+                  <Button asChild className="flex-1 btn-hover btn-cta glow-cursor">
                     <a href={project.live} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="h-4 w-4 mr-2" />
                       Live Demo
@@ -119,7 +119,7 @@ const Projects = () => {
                   </Button>
                 )}
                 {project.github && (
-                  <Button variant="outline" asChild className="flex-1">
+                  <Button variant="outline" asChild className="flex-1 btn-hover btn-secondary glow-cursor">
                     <a href={project.github} target="_blank" rel="noopener noreferrer">
                       <Github className="h-4 w-4 mr-2" />
                       View Code
@@ -136,7 +136,7 @@ const Projects = () => {
 
   return (
     <>
-      <section ref={sectionRef} id="projects" className="py-20 lg:py-32 bg-background">
+      <section ref={sectionRef} id="projects" className="py-20 lg:py-32 bg-background scroll-snap-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
@@ -160,19 +160,10 @@ const Projects = () => {
 
           {/* View All Projects */}
           <div className={`text-center mt-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ animationDelay: '0.8s' }}>
-            <Button variant="outline" size="lg" className="glass-card hover:glow-soft">
+            <Button variant="outline" size="lg" className="glass-card btn-hover btn-secondary glow-cursor">
               View All Projects on GitHub
               <Github className="h-5 w-5 ml-2" />
             </Button>
-          </div>
-        </div>
-
-        {/* Floating Project Elements */}
-        <div className="relative pointer-events-none overflow-hidden">
-          <div className="absolute inset-0">
-            <div className="absolute top-1/4 left-1/6 w-12 h-12 bg-primary/10 rounded-full bubble-float"></div>
-            <div className="absolute top-1/3 right-1/4 w-8 h-8 bg-accent/10 rounded-full bubble-float" style={{ animationDelay: '2s' }}></div>
-            <div className="absolute bottom-1/4 left-1/2 w-10 h-10 bg-highlight/10 rounded-full bubble-float" style={{ animationDelay: '4s' }}></div>
           </div>
         </div>
       </section>

@@ -107,6 +107,10 @@ export default {
 				'scale-in': {
 					'0%': { opacity: '0', transform: 'scale(0.9)' },
 					'100%': { opacity: '1', transform: 'scale(1)' }
+				},
+				'scroll-cue': {
+					'0%, 100%': { opacity: '0.5', transform: 'translateY(0px)' },
+					'50%': { opacity: '1', transform: 'translateY(5px)' }
 				}
 			},
 			animation: {
@@ -116,7 +120,8 @@ export default {
 				'bubble-float': 'bubble-float 8s ease-in-out infinite',
 				'float-gentle': 'float-gentle 3s ease-in-out infinite',
 				'fade-in-up': 'fade-in-up 0.6s ease-out',
-				'scale-in': 'scale-in 0.4s ease-out'
+				'scale-in': 'scale-in 0.4s ease-out',
+				'scroll-cue': 'scroll-cue 2s ease-in-out infinite'
 			}
 		}
 	},

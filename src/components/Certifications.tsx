@@ -61,7 +61,7 @@ const Certifications = () => {
           <Button
             variant="outline"
             size="sm"
-            className="mt-4 w-full"
+            className="mt-4 w-full btn-hover btn-secondary glow-cursor"
             asChild
           >
             <a
@@ -79,7 +79,7 @@ const Certifications = () => {
   );
 
   return (
-    <section ref={sectionRef} id="certifications" className="py-20 lg:py-32 bg-background">
+    <section ref={sectionRef} id="certifications" className="py-20 lg:py-32 bg-background scroll-snap-section">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
@@ -98,15 +98,6 @@ const Certifications = () => {
           {certificationsData.map((cert, index) => (
             <CertificationCard key={cert.id} cert={cert} index={index} />
           ))}
-        </div>
-
-        {/* Floating Elements */}
-        <div className="relative mt-16 pointer-events-none">
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute top-0 left-1/4 w-6 h-6 bg-highlight/20 rounded-full float-gentle"></div>
-            <div className="absolute top-10 right-1/3 w-8 h-8 bg-primary/20 rounded-full float-gentle" style={{ animationDelay: '1s' }}></div>
-            <div className="absolute bottom-0 left-1/2 w-4 h-4 bg-accent/20 rounded-full float-gentle" style={{ animationDelay: '2s' }}></div>
-          </div>
         </div>
       </div>
     </section>

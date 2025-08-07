@@ -82,7 +82,7 @@ const Footer = () => {
               <Button
                 variant="ghost"
                 size="icon"
-                className="glass-card hover:glow-soft float-gentle"
+                className="glass-card btn-hover glow-cursor"
                 asChild
               >
                 <a
@@ -97,8 +97,7 @@ const Footer = () => {
               <Button
                 variant="ghost"
                 size="icon"
-                className="glass-card hover:glow-soft float-gentle"
-                style={{ animationDelay: '0.5s' }}
+                className="glass-card btn-hover glow-cursor"
                 asChild
               >
                 <a
@@ -113,8 +112,7 @@ const Footer = () => {
               <Button
                 variant="ghost"
                 size="icon"
-                className="glass-card hover:glow-soft float-gentle"
-                style={{ animationDelay: '1s' }}
+                className="glass-card btn-hover glow-cursor"
                 asChild
               >
                 <a
@@ -147,7 +145,7 @@ const Footer = () => {
             <div className="flex items-center gap-4 text-sm text-muted-foreground">
               <button
                 onClick={scrollToTop}
-                className="hover:text-primary transition-colors"
+                className="hover:text-primary transition-colors btn-hover glow-cursor"
               >
                 Back to Surface ↑
               </button>

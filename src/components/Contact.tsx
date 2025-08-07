@@ -120,7 +120,7 @@ const Contact = () => {
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground glow-soft float-gentle"
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground btn-hover btn-cta glow-cursor"
                 >
                   {isSubmitting ? (
                     <>Sending your bottle to sea... 🌊</>
@@ -149,7 +149,7 @@ const Contact = () => {
                 <div className="space-y-3">
                   <a
                     href="mailto:hello@ocean-flow.dev"
-                    className="flex items-center gap-3 text-foreground hover:text-primary transition-colors"
+                    className="flex items-center gap-3 text-foreground hover:text-primary transition-colors btn-hover glow-cursor"
                   >
                     <Mail className="h-5 w-5" />
                     hello@ocean-flow.dev
@@ -178,8 +178,7 @@ const Contact = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`flex items-center gap-3 p-4 rounded-lg glass-card hover:glow-soft transition-all ${social.color} ripple-effect float-gentle`}
-                    style={{ animationDelay: `${index * 0.2}s` }}
+                    className={`flex items-center gap-3 p-4 rounded-lg glass-card transition-all ${social.color} btn-hover glow-cursor`}
                   >
                     <social.icon className="h-5 w-5" />
                     <span className="font-medium">{social.label}</span>
@@ -189,23 +188,13 @@ const Contact = () => {
             </div>
 
             {/* Fun Fact */}
-            <div className="glass-card p-6 rounded-2xl text-center bubble-float">
+            <div className="glass-card p-6 rounded-2xl text-center">
               <div className="text-4xl mb-4">🐠</div>
               <p className="text-sm text-muted-foreground italic">
                 "Did you know? Just like how fish communicate through bioluminescence, 
                 I believe great UIs communicate through thoughtful animations and interactions!"
               </p>
             </div>
-          </div>
-        </div>
-
-        {/* Decorative Ocean Floor */}
-        <div className="relative mt-20 pointer-events-none">
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute bottom-0 left-1/4 w-2 h-16 bg-accent/20 seaweed-sway"></div>
-            <div className="absolute bottom-0 right-1/3 w-2 h-20 bg-primary/20 seaweed-sway" style={{ animationDelay: '1s' }}></div>
-            <div className="absolute bottom-0 left-2/3 w-2 h-12 bg-secondary/20 seaweed-sway" style={{ animationDelay: '2s' }}></div>
-            <div className="absolute bottom-0 right-1/4 w-2 h-18 bg-highlight/20 seaweed-sway" style={{ animationDelay: '3s' }}></div>
           </div>
         </div>
       </div>

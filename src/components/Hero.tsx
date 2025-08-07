@@ -69,7 +69,7 @@ const Hero = () => {
             <Button
               onClick={scrollToProjects}
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 font-medium glow-soft wave-float"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 font-medium btn-hover btn-cta glow-cursor"
             >
               View My Work
             </Button>
@@ -77,7 +77,7 @@ const Hero = () => {
             <Button
               variant="outline"
               size="lg"
-              className="glass-card hover:glow-soft px-8 py-3 font-medium"
+              className="glass-card px-8 py-3 font-medium btn-hover btn-secondary glow-cursor"
               onClick={() => {
                 const contactSection = document.getElementById('contact');
                 contactSection?.scrollIntoView({ behavior: 'smooth' });
@@ -89,13 +89,13 @@ const Hero = () => {
 
           {/* Social Links */}
           <div className="flex gap-6 justify-center mb-12 animate-fade-in-up" style={{ animationDelay: '1.2s' }}>
-            <Button variant="ghost" size="icon" className="glass-card hover:glow-soft float-gentle">
+            <Button variant="ghost" size="icon" className="glass-card btn-hover glow-cursor">
               <Github className="h-5 w-5" />
             </Button>
-            <Button variant="ghost" size="icon" className="glass-card hover:glow-soft float-gentle" style={{ animationDelay: '0.5s' }}>
+            <Button variant="ghost" size="icon" className="glass-card btn-hover glow-cursor">
               <Linkedin className="h-5 w-5" />
             </Button>
-            <Button variant="ghost" size="icon" className="glass-card hover:glow-soft float-gentle" style={{ animationDelay: '1s' }}>
+            <Button variant="ghost" size="icon" className="glass-card btn-hover glow-cursor">
               <Mail className="h-5 w-5" />
             </Button>
           </div>
@@ -105,8 +105,9 @@ const Hero = () => {
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
           <button
             onClick={scrollToProjects}
-            className="text-muted-foreground hover:text-primary transition-colors"
+            className="text-muted-foreground hover:text-primary transition-colors glow-cursor"
             aria-label="Scroll to projects"
+            style={{ animation: 'scroll-cue 2s ease-in-out infinite' }}
           >
             <ChevronDown className="h-8 w-8" />
           </button>
