@@ -1,0 +1,42 @@
+[
+  {
+    "id": "ocean-portfolio",
+    "title": "Ocean Flow Portfolio",
+    "description": "A serene underwater-themed portfolio with glassmorphism design and smooth animations",
+    "technologies": ["React", "TypeScript", "Tailwind CSS", "GSAP", "Framer Motion"],
+    "image": "/project-ocean.jpg",
+    "github": "https://github.com/username/ocean-portfolio",
+    "live": "https://ocean-portfolio.dev",
+    "featured": true
+  },
+  {
+    "id": "ecommerce-platform",
+    "title": "Coral Marketplace",
+    "description": "Full-stack e-commerce platform with real-time inventory and payment processing",
+    "technologies": ["Next.js", "PostgreSQL", "Stripe", "Prisma", "TailwindCSS"],
+    "image": "/project-coral.jpg",
+    "github": "https://github.com/username/coral-marketplace",
+    "live": "https://coral-marketplace.com",
+    "featured": true
+  },
+  {
+    "id": "task-manager",
+    "title": "Deep Focus",
+    "description": "Minimalist task management app with underwater ambient sounds",
+    "technologies": ["Vue.js", "Node.js", "MongoDB", "Socket.io"],
+    "image": "/project-focus.jpg",
+    "github": "https://github.com/username/deep-focus",
+    "live": "https://deep-focus.app",
+    "featured": false
+  },
+  {
+    "id": "weather-app",
+    "title": "Tide Tracker",
+    "description": "Beautiful weather app with ocean-themed animations and forecasts",
+    "technologies": ["React Native", "OpenWeather API", "Expo", "Lottie"],
+    "image": "/project-tide.jpg",
+    "github": "https://github.com/username/tide-tracker",
+    "live": "https://tide-tracker.app",
+    "featured": false
+  }
+]

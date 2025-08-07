@@ -1,0 +1,38 @@
+[
+  {
+    "id": "aws-solutions-architect",
+    "title": "AWS Certified Solutions Architect",
+    "issuer": "Amazon Web Services",
+    "date": "2024",
+    "image": "/cert-aws.png",
+    "description": "Cloud architecture and deployment expertise",
+    "verificationUrl": "https://aws.amazon.com/verification"
+  },
+  {
+    "id": "react-advanced",
+    "title": "Advanced React Developer",
+    "issuer": "Meta",
+    "date": "2023",
+    "image": "/cert-react.png",
+    "description": "Advanced React patterns and performance optimization",
+    "verificationUrl": "https://coursera.org/verify/react-advanced"
+  },
+  {
+    "id": "typescript-expert",
+    "title": "TypeScript Expert Certification",
+    "issuer": "Microsoft",
+    "date": "2023",
+    "image": "/cert-typescript.png",
+    "description": "Advanced TypeScript development and architecture",
+    "verificationUrl": "https://learn.microsoft.com/verify"
+  },
+  {
+    "id": "ux-design",
+    "title": "UX Design Professional",
+    "issuer": "Google",
+    "date": "2022",
+    "image": "/cert-ux.png",
+    "description": "User experience design and research methodologies",
+    "verificationUrl": "https://coursera.org/verify/ux-design"
+  }
+]

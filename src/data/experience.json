@@ -1,0 +1,42 @@
+[
+  {
+    "id": "senior-frontend-dev",
+    "title": "Senior Frontend Developer",
+    "company": "Ocean Tech Solutions",
+    "location": "San Francisco, CA",
+    "startDate": "2022-08",
+    "endDate": "present",
+    "description": "Leading frontend architecture for scalable web applications with focus on performance and user experience. Built component libraries and mentored junior developers.",
+    "technologies": ["React", "TypeScript", "Next.js", "GraphQL", "AWS"]
+  },
+  {
+    "id": "fullstack-dev",
+    "title": "Full Stack Developer",
+    "company": "Blue Wave Startup",
+    "location": "Remote",
+    "startDate": "2020-06",
+    "endDate": "2022-07",
+    "description": "Developed end-to-end features for B2B SaaS platform serving 10k+ users. Implemented real-time features and optimized database performance.",
+    "technologies": ["Vue.js", "Node.js", "PostgreSQL", "Docker", "Kubernetes"]
+  },
+  {
+    "id": "frontend-dev",
+    "title": "Frontend Developer",
+    "company": "Coral Design Agency",
+    "location": "Los Angeles, CA",
+    "startDate": "2019-01",
+    "endDate": "2020-05",
+    "description": "Created interactive websites for luxury brands with focus on animations and mobile-first design. Collaborated closely with design team.",
+    "technologies": ["JavaScript", "SCSS", "GSAP", "WordPress", "Figma"]
+  },
+  {
+    "id": "junior-dev",
+    "title": "Junior Web Developer",
+    "company": "Deep Code Bootcamp",
+    "location": "San Diego, CA",
+    "startDate": "2018-09",
+    "endDate": "2018-12",
+    "description": "Intensive coding bootcamp focused on modern web development. Built multiple projects and learned industry best practices.",
+    "technologies": ["HTML", "CSS", "JavaScript", "React", "Git"]
+  }
+]

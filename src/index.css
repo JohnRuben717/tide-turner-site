@@ -2,41 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Ocean Flow Design System - Serene underwater theme with glassmorphism
+All colors MUST be HSL for perfect consistency
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Ocean Light Mode Palette */
+    --background: 187 50% 96.1%; /* #EAF6F6 - Light Ocean Mist */
+    --foreground: 210 84% 8.6%; /* #0D1B2A - Deep Ocean Text */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 187 40% 98%; /* Translucent Cards */
+    --card-foreground: 210 84% 8.6%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 187 50% 96.1%;
+    --popover-foreground: 210 84% 8.6%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 199 100% 35.7%; /* #0077B6 - Ocean Primary */
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 201 65% 76.9%; /* #A2D5F2 - Soft Ocean Accent */
+    --secondary-foreground: 210 84% 8.6%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 187 30% 94.1%;
+    --muted-foreground: 200 18% 40.4%; /* #4B5D67 - Muted Ocean */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 201 65% 76.9%; /* Ocean Blue Accent */
+    --accent-foreground: 210 84% 8.6%;
+
+    --highlight: 45 100% 83.9%; /* #FFE1A8 - Warm Ocean Foam */
+    --highlight-foreground: 210 84% 8.6%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 187 30% 85.1%;
+    --input: 187 30% 92.1%;
+    --ring: 199 100% 35.7%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
+
+    /* Ocean Gradients */
+    --gradient-ocean: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+    --gradient-depth: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(199 40% 88%) 100%);
+    --gradient-waves: linear-gradient(90deg, transparent 0%, hsl(var(--accent) / 0.1) 50%, transparent 100%);
+    
+    /* Ocean Shadows & Glass Effects */
+    --shadow-ocean: 0 8px 32px hsl(var(--primary) / 0.15);
+    --shadow-depth: 0 20px 60px hsl(var(--primary) / 0.25);
+    --glass-backdrop: hsl(var(--background) / 0.8);
+    --glass-border: hsl(var(--accent) / 0.2);
+
+    /* Animation Values */
+    --transition-ocean: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    --transition-wave: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,33 +75,46 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Deep Ocean Dark Mode */
+    --background: 219 84% 8.2%; /* #0B132B - Deep Ocean */
+    --foreground: 0 0% 91.8%; /* #EAEAEA - Light Text */
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 219 70% 12%; /* Dark Glass Cards */
+    --card-foreground: 0 0% 91.8%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 219 84% 8.2%;
+    --popover-foreground: 0 0% 91.8%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 192 100% 75.1%; /* #90E0EF - Bright Ocean */
+    --primary-foreground: 219 84% 8.2%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 196 82% 41.6%; /* #3E92CC - Ocean Accent */
+    --secondary-foreground: 0 0% 91.8%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 219 40% 16%;
+    --muted-foreground: 200 28% 68.6%; /* #9DB4C0 - Muted Ocean Light */
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 174 100% 69.6%; /* #6FFFE9 - Bright Highlight */
+    --accent-foreground: 219 84% 8.2%;
+
+    --highlight: 174 100% 69.6%; /* Bright Ocean Glow */
+    --highlight-foreground: 219 84% 8.2%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 91.8%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 219 30% 20%;
+    --input: 219 30% 18%;
+    --ring: 192 100% 75.1%;
+
+    /* Dark Ocean Gradients */
+    --gradient-ocean: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+    --gradient-depth: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(219 60% 15%) 100%);
+    --gradient-waves: linear-gradient(90deg, transparent 0%, hsl(var(--accent) / 0.15) 50%, transparent 100%);
+    
+    /* Dark Glass Effects */
+    --glass-backdrop: hsl(var(--background) / 0.7);
+    --glass-border: hsl(var(--accent) / 0.3);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -101,5 +133,99 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', 'Cabin', sans-serif;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'DM Serif Display', 'Georgia', serif;
+  }
+}
+
+@layer components {
+  /* Glassmorphism Base Classes */
+  .glass-card {
+    @apply backdrop-blur-lg border;
+    background: var(--glass-backdrop);
+    border-color: var(--glass-border);
+    box-shadow: var(--shadow-ocean);
+  }
+
+  .glass-nav {
+    @apply backdrop-blur-xl border-b;
+    background: var(--glass-backdrop);
+    border-color: var(--glass-border);
+  }
+
+  /* Ocean Wave Animations */
+  .wave-float {
+    animation: wave-float 6s ease-in-out infinite;
+  }
+
+  .bubble-float {
+    animation: bubble-float 8s ease-in-out infinite;
+  }
+
+  .seaweed-sway {
+    animation: seaweed-sway 4s ease-in-out infinite;
+  }
+
+  /* Gradient Backgrounds */
+  .bg-ocean-gradient {
+    background: var(--gradient-ocean);
+  }
+
+  .bg-depth-gradient {
+    background: var(--gradient-depth);
+  }
+
+  /* Interactive Effects */
+  .ripple-effect {
+    @apply relative overflow-hidden;
+    transition: var(--transition-ocean);
+  }
+
+  .ripple-effect::before {
+    content: '';
+    @apply absolute inset-0 opacity-0;
+    background: radial-gradient(circle, hsl(var(--accent) / 0.3) 0%, transparent 70%);
+    transition: opacity 0.3s ease;
+  }
+
+  .ripple-effect:hover::before {
+    @apply opacity-100;
+  }
+
+  /* Floating Elements */
+  .float-gentle {
+    animation: float-gentle 3s ease-in-out infinite;
+  }
+
+  .glow-soft {
+    box-shadow: 0 0 20px hsl(var(--accent) / 0.4);
+  }
+}
+
+@keyframes wave-float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-10px) rotate(1deg); }
+  50% { transform: translateY(-5px) rotate(0deg); }
+  75% { transform: translateY(-15px) rotate(-1deg); }
+}
+
+@keyframes bubble-float {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  33% { transform: translateY(-20px) scale(1.05); }
+  66% { transform: translateY(-10px) scale(0.95); }
+}
+
+@keyframes seaweed-sway {
+  0%, 100% { transform: rotate(0deg) translateX(0px); }
+  25% { transform: rotate(2deg) translateX(5px); }
+  50% { transform: rotate(0deg) translateX(0px); }
+  75% { transform: rotate(-2deg) translateX(-5px); }
+}
+
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
 }
